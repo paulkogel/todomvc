@@ -8,7 +8,8 @@
             [secretary.core :as secretary]
             [todomvc.utils :refer [pluralize now guid store hidden]]
             [clojure.string :as string]
-            [todomvc.item :as item])
+            [todomvc.item :as item]
+            [clojure.browser.repl :as repl])
   (:import [goog History]
            [goog.history EventType]))
 
@@ -193,3 +194,5 @@
     (swap! app-state update-in [:todos]
       (fn [todos]
         (into [] (remove :completed todos))))))
+
+(repl/connect "http://localhost:9000/repl")

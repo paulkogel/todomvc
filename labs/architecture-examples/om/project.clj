@@ -8,9 +8,11 @@
                  [org.clojure/clojurescript "0.0-2138"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [secretary "0.4.0"]
-                 [om "0.1.5"]]
+                 [om "0.1.5"]
+                 [com.cemerick/piggieback "0.1.2"]]
 
   :plugins [[lein-cljsbuild "1.0.1"]]
+  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
   :source-paths ["src"]
 
